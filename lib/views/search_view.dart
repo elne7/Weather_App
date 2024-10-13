@@ -1,7 +1,9 @@
-import 'package:dio/dio.dart';
+// import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:weather_app/models/weather_model.dart';
-import 'package:weather_app/services/weather_services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/cubits/get_weather_cubit/get_weather_cubit.dart';
+// import 'package:weather_app/models/weather_model.dart';
+// import 'package:weather_app/services/weather_services.dart';
 // import 'package:weather_app/widgets/weather_info_body.dart';
 
 class SearchView extends StatelessWidget {
@@ -18,8 +20,8 @@ class SearchView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: TextField(
             onSubmitted: (value) async{
-              weatherModel = await WeatherServices(Dio()).getCurrentWeather(cityName: value);
-
+              var getWeatherCubit = BlocProvider.of<GetWeatherCubit>(context);
+              getWeatherCubit.getWeather(cityName: value);
               Navigator.pop(context);              
             },
             decoration: InputDecoration(
@@ -41,5 +43,3 @@ class SearchView extends StatelessWidget {
     );
   }
 }
-
-WeatherModel? weatherModel;
