@@ -1,16 +1,11 @@
 # weather_app
 
-A new Flutter project.
+A new Flutter project uses an online weather API to show the weather of a city the user wants to search for.
+Also, I used Bloc/Cubit as a state management.
 
-## Getting Started
+The main features of the app are:
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+  - Search for a city to know its weather.
+  - Show the city's temperature.
+  - Show the city's max/min temperature.
+  - Show the city's weather conditions.
